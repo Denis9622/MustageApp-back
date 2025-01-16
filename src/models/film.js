@@ -9,6 +9,7 @@ const filmSchema = new mongoose.Schema({
   rating: { type: Number, required: true },
   releaseDate: { type: Date, required: true },
   poster: { type: String, required: true },
+  isFavorite: { type: Boolean, default: false }, 
 });
 
 const Film = mongoose.model("Film", filmSchema, "films");
