@@ -18,7 +18,7 @@ app.use("/api/films", filmsRouter);
 const bootstrap = async () => {
   await initMongoDB();
   app.listen(port, () => {
-    console.log(`Сервер запущен на порту ${port}`);
+    console.log(`Server started on port ${port}`);
   });
 };
 

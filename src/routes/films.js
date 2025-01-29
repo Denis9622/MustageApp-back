@@ -16,7 +16,7 @@ router.get("/:id", async (req, res) => {
   try {
     const film = await Film.findById(req.params.id);
     if (!film) {
-      return res.status(404).json({ message: "Фильм не найден" });
+      return res.status(404).json({ message: "Movie not found" });
     }
     res.json(film);
   } catch (error) {
@@ -41,7 +41,7 @@ router.put("/:id", async (req, res) => {
       new: true,
     });
     if (!updatedFilm) {
-      return res.status(404).json({ message: "Фильм не найден" });
+      return res.status(404).json({ message: "Movie not found" });
     }
     res.json(updatedFilm);
   } catch (error) {
@@ -54,9 +54,9 @@ router.delete("/:id", async (req, res) => {
   try {
     const deletedFilm = await Film.findByIdAndDelete(req.params.id);
     if (!deletedFilm) {
-      return res.status(404).json({ message: "Фильм не найден" });
+      return res.status(404).json({ message: "Movie not found" });
     }
-    res.json({ message: "Фильм успешно удален" });
+    res.json({ message: "Movie successfully deleted." });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -66,7 +66,7 @@ router.patch("/:id/favorite", async (req, res) => {
   try {
     const film = await Film.findById(req.params.id);
     if (!film) {
-      return res.status(404).json({ message: "Фильм не найден" });
+      return res.status(404).json({ message: "Movie not found" });
     }
     film.isFavorite = !film.isFavorite;
     await film.save();
