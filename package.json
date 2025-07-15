@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js",
     "start": "node src/server",
     "dev": "nodemon src/server",
-    "build": "echo \"No build step defined\"",
+    "build": "npm run build-docs",
     "build-docs": "redocly bundle --ext json -o docs/swagger.json",
     "preview-docs": "redocly preview-docs"
   },
@@ -20,6 +20,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.9.5"
+    "mongoose": "^8.9.5",
+    "nodemon": "^3.1.10"
   }
 }

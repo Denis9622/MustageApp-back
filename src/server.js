@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { initMongoDB } from "./db/initMongoDB.js";
-import filmsRouter from "./routes/films.js";
+import tasksRouter from "./routes/tasks.js";
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/films", filmsRouter); 
+app.use("/api/tasks", tasksRouter);
 
 
 const bootstrap = async () => {
